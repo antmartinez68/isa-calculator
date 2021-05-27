@@ -9,3 +9,8 @@ def add(a, b):
 def sub(a, b):
     """Restar a un valor otro"""
     return a - b
+
+
+def mul(a, b):
+    """Multiplicar dos valores"""
+    return a * b

@@ -14,3 +14,8 @@ def sub(a, b):
 def mul(a, b):
     """Multiplicar dos valores"""
     return a * b
+
+
+def div(a, b):
+    """Dividir un valor entre otro"""
+    return a / b

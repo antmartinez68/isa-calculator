@@ -136,6 +136,59 @@ class PyCalculatorTest(unittest.TestCase):
         # Assert
         self.assertEqual(expected, result)
 
+    #
+    # Bloque de tests función división
+    #
+
+    def test_division_positivos(self):
+        # Arrange
+        value_1 = 3
+        value_2 = 2
+        expected = 1.5
+        # Act
+        result = isa_calculator.div(value_1, value_2)
+        # Assert
+        self.assertEqual(expected, result)
+
+    def test_division_negativos(self):
+        # Arrange
+        value_1 = -6
+        value_2 = -3
+        expected = 2
+        # Act
+        result = isa_calculator.div(value_1, value_2)
+        # Assert
+        self.assertEqual(expected, result)
+
+    def test_division_positivo_negativo(self):
+        # Arrange
+        value_1 = 3
+        value_2 = -2
+        expected = -1.5
+        # Act
+        result = isa_calculator.div(value_1, value_2)
+        # Assert
+        self.assertEqual(expected, result)
+
+    def test_division_negativo_positivo(self):
+        # Arrange
+        value_1 = -6
+        value_2 = 3
+        expected = -2
+        # Act
+        result = isa_calculator.div(value_1, value_2)
+        # Assert
+        self.assertEqual(expected, result)
+
+    def test_division_por_cero_lanza_excepción(self):
+        # Arrange
+        value_1 = 2
+        value_2 = 0
+        expected = ZeroDivisionError
+        # Act & assert (juntos por peculiaridades de unittest)
+        with self.assertRaises(expected):
+            isa_calculator.div(value_1, value_2)
+
 
 if __name__ == "__main__":
     unittest.main()

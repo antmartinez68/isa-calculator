@@ -189,6 +189,37 @@ class PyCalculatorTest(unittest.TestCase):
         with self.assertRaises(expected):
             isa_calculator.div(value_1, value_2)
 
+    #
+    # Bloque de tests función raíz cuadrada
+    #
+
+    def test_raiz_de_negativo_lanza_excepción(self):
+        # Arrange
+        value = -2
+        expected = ArithmeticError
+        # Act & assert (juntos por peculiaridades de unittest)
+        with self.assertRaises(expected):
+            isa_calculator.sqrt(value)
+
+    def test_raiz_cuadrado_perfecto(self):
+        # Arrange
+        value = 4
+        expected = 2
+        # Act
+        result = isa_calculator.sqrt(value)
+        # Assert
+        self.assertEqual(expected, result)
+
+    def test_raiz_con_suficiente_precision(self):
+        # Arrange
+        value = 2
+        expected = 1.414213562
+        tolerance = 1e-5
+        # Act
+        result = isa_calculator.sqrt(value)
+        # Assert
+        self.assertLess(abs(result - expected), tolerance)
+
 
 if __name__ == "__main__":
     unittest.main()

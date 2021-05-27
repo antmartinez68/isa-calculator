@@ -92,6 +92,50 @@ class PyCalculatorTest(unittest.TestCase):
         # Assert
         self.assertEqual(expected, result)
 
+    #
+    # Bloque de tests función producto
+    #
+
+    def test_multiplicacion_positivos(self):
+        # Arrange
+        value_1 = 2
+        value_2 = 3
+        expected = 6
+        # Act
+        result = isa_calculator.mul(value_1, value_2)
+        # Assert
+        self.assertEqual(expected, result)
+
+    def test_multiplicacion_negativos(self):
+        # Arrange
+        value_1 = -2
+        value_2 = -3
+        expected = 6
+        # Act
+        result = isa_calculator.mul(value_1, value_2)
+        # Assert
+        self.assertEqual(expected, result)
+
+    def test_multiplicacion_positivo_negativo(self):
+        # Arrange
+        value_1 = 2
+        value_2 = -3
+        expected = -6
+        # Act
+        result = isa_calculator.mul(value_1, value_2)
+        # Assert
+        self.assertEqual(expected, result)
+
+    def test_multiplicacion_negativo_positivo(self):
+        # Arrange
+        value_1 = -2
+        value_2 = 3
+        expected = -6
+        # Act
+        result = isa_calculator.mul(value_1, value_2)
+        # Assert
+        self.assertEqual(expected, result)
+
 
 if __name__ == "__main__":
     unittest.main()
